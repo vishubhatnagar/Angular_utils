@@ -1,0 +1,14 @@
+<div>
+  <ng-container *ngIf="isShowNoInternet; else imOnline">
+    <div>
+      <img *ngIf="!showErrorMsg; else errorMsg" src="../assets/noInternet.gif" (onerror)="onImgError()"
+        width="50%" height="50%" alt="No Internet connection !!!">
+      <ng-template #errorMsg>
+        <h3>{{showErrorMsg}}</h3>
+      </ng-template>
+    </div>
+  </ng-container>
+  <ng-template #imOnline>
+    <h1>Hello Im Online</h1>
+  </ng-template>
+</div>
